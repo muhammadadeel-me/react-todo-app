@@ -16,6 +16,7 @@ function Record({index, completed, todo, records, setRecords}) {
       let record = newRecords[index].completed = false
     }
     setRecords(newRecords)
+    localStorage.setItem('records', JSON.stringify(newRecords))
   }
 
   // Removed Record
@@ -23,12 +24,13 @@ function Record({index, completed, todo, records, setRecords}) {
     let newRecords = [...records]
     newRecords.splice(index, 1)
     setRecords(newRecords)
+    localStorage.setItem('records', JSON.stringify(newRecords))
   }
 
   return (
     <div className='record'>
       {
-        <input type="checkbox" title='Mark as incomplete' value={completed} onChange={()=> handleComplete(isCompleted, index)} />
+        <input type="checkbox" title='Mark as incomplete' checked={completed} onChange={()=> handleComplete(isCompleted, index)} />
         // <input type="checkbox" title='Mark as completed' onChange={()=> handleComplete('complete', index)} />
       }
         <p className={completed? "completed" : ""}>{todo}</p>

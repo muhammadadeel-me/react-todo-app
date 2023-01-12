@@ -6,10 +6,17 @@ function Form({records, setRecords}) {
   const handleSubmit = (e) => {
     e.preventDefault()
     if(todo){
+
+      // Update Records & make input field empty
       setRecords([
         ...records,{ completed: false,todo: todo,}
       ])
       setTodo('')
+
+      // Update Local Storage
+      localStorage.setItem('records', JSON.stringify([
+        ...records,{ completed: false,todo: todo,}
+      ]))
     }
   }
 
