@@ -13,17 +13,11 @@ function App() {
 
   useEffect(()=>{
     if(localStorage.getItem('records')){
-      // localStorage.setItem('records', JSON.stringify(records))
       setRecords(JSON.parse(localStorage.getItem('records')))
     }else{
       localStorage.setItem('records', JSON.stringify(records))
     }
   }, [])
-
-  // useEffect(()=>{
-  //   localStorage.setItem('records', JSON.stringify(records))
-  //   setRecords(JSON.parse(localStorage.getItem('records')))
-  // }, [])
 
   return (
     <div className="wrapper">
