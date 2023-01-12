@@ -1,0 +1,56 @@
+.record{
+  width: 100%;
+  display: flex;
+  /* background: grey; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 7px 7px 15px #80808027;
+  border: 1px solid #ecf0f1;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.record p{
+  font-size: 1.1rem;
+  width: 80%;
+}
+.record p.completed{
+  text-decoration: line-through;
+}
+.record input{
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  accent-color: #2c3e50;
+  cursor: pointer;
+}
+.record button{
+  border-radius: 5px;
+  border: 1px solid #c0392b;
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  min-width: 100px;
+  background: #e74c3c;
+  color: #ecf0f1;
+  font-size: 1.2rem;
+  transition: .1s;
+  cursor: pointer;
+}
+.record button:hover,
+.record button:active{
+  background: #c0392b;
+  box-shadow: 4px 4px 7px #80808038;
+}
+
+@media screen and (max-width: 600px){
+  .record{
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .record p{
+    order: 1;
+    width: 100%;
+  }
+}

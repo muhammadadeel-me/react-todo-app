@@ -1,23 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import Form from './components/Form';
+import Record from './components/Record';
+import { useState } from 'react';
 
 function App() {
+
+  // We are keeping records in App.js becuase we need in multiple childs
+  // And we are not using contextAPI or Redux
+  const [records, setRecords] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Header />
+      <Form records={records} setRecords={setRecords} />
+      <div className="records">
+        {
+          records.map(({completed, todo}, index)=>{
+            return <Record key={index} index={index} records={records} setRecords={setRecords} completed={completed} todo={todo} />
+          })
+        }
+      </div>
     </div>
   );
 }
