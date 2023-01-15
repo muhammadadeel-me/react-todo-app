@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Form from './components/Form';
@@ -24,9 +23,15 @@ function App() {
       <Header />
       <Form records={records} setRecords={setRecords} />
       <div className="records">
+        {/* <div className="record">
+          <h4>Mark</h4>
+          <h4>Todo</h4>
+          <h4>Priority</h4>
+          <h4>Action</h4>
+        </div> */}
         {
-          records.map(({completed, todo}, index)=>{
-            return <Record key={index} index={index} records={records} setRecords={setRecords} completed={completed} todo={todo} />
+          records.map(({completed, todo, priority}, index)=>{
+            return <Record key={index} index={index} records={records} setRecords={setRecords} priority={priority} completed={completed} todo={todo} />
           })
         }
       </div>

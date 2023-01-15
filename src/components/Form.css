@@ -1,5 +1,5 @@
 .form{
-  width: 500px;
+  width: 600px;
   margin: 0 auto;
   /* background: grey; */
   padding: 30px 0;
@@ -10,7 +10,8 @@
   gap: 10px;
 }
 .form input,
-.form button{
+.form button,
+.form select{
   border-radius: 10px;
   height: 50px;
   outline: none;
@@ -21,8 +22,13 @@
 }
 .form input{
   background: #ecf0f1;
-  width: 80%;
+  width: 60%;
   transition: .1s;
+}
+.form select{
+  width: 20%;
+  cursor: pointer;
+  background: #ecf0f1;
 }
 .form input:hover,
 .form input:focus{
@@ -43,13 +49,14 @@
   box-shadow: 4px 4px 7px #80808038;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
   .form{
     width: 92%;
     flex-direction: column;
   }
   .form input,
-  .form button{
+  .form button,
+  .form select{
     width: 100%;
   }
 }

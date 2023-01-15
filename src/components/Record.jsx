@@ -1,6 +1,6 @@
 import './Record.css'
 
-function Record({index, completed, todo, records, setRecords}) {
+function Record({index, completed, todo, records, setRecords, priority}) {
 
   // This variable will help us to update checkbox value
   let isCompleted = completed ? 'complete' : 'incomplete'
@@ -33,7 +33,8 @@ function Record({index, completed, todo, records, setRecords}) {
         <input type="checkbox" title='Mark as incomplete' checked={completed} onChange={()=> handleComplete(isCompleted, index)} />
         // <input type="checkbox" title='Mark as completed' onChange={()=> handleComplete('complete', index)} />
       }
-        <p className={completed? "completed" : ""}>{todo}</p>
+        <p className={completed? "todo completed" : "todo"}>{todo}</p>
+        <p className='priority'>{priority}</p>
         <button title='Delete this todo' onClick={()=> removeRecord(index)}>Remove</button>
     </div>
   )
